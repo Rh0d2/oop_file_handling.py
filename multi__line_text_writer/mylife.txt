@@ -1,1 +1,2 @@
-System: Initializing multi-line writer test...
+What is the point?
+Is it worth it?

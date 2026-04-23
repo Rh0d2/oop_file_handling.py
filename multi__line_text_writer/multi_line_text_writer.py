@@ -1,12 +1,18 @@
 # Multi-line Text Writer
-# Basic file creation and write test
+# Final implementation with interactive loop
 
 def main():
-    # Check if the script can create and write to a file
-    file_output = open("mylife.txt", "w")
-    file_output.write("System: Initializing multi-line writer test...\n")
-    file_output.close()
-    print("Base file created successfully.")
+    # 'with' handles closing the file automatically even if an error occurs
+    with open("mylife.txt", "w") as my_file:
+        while True:
+            entry = input("Enter line: ")
+            my_file.write(entry + "\n")
+            
+            choice = input("Are there more lines y/n? ").lower()
+            if choice == 'n':
+                break
+                
+    print("\nFile 'mylife.txt' has been updated with your entries.")
 
 if __name__ == "__main__":
     main()
