@@ -1,7 +1,11 @@
 def process_integers():
-    # Basic file reading and verification
     with open('integers.txt', 'r') as infile:
         for line in infile:
-            print(f"Read value: {line.strip()}")
+            num = int(line.strip())
+            # Logic: modulo 2 determines parity
+            if num % 2 == 0:
+                print(f"{num} is even")
+            else:
+                print(f"{num} is odd")
 
 process_integers()
