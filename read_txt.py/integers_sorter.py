@@ -1,15 +1,20 @@
-# Reading the file
+# Filtering logic
 def main():
-    # Open the file
     infile = open('numbers.txt', 'r')
-    
-    # Read the data and split it into a list
     content = infile.read().split()
-    
-    # Show the numbers in the terminal
-    print("Numbers found:", content)
-    
-    # Close the file
     infile.close()
+
+    evens = []
+    odds = []
+
+    for item in content:
+        num = int(item)
+        if num % 2 == 0:
+            evens.append(num)
+        else:
+            odds.append(num)
+
+    print("Evens sorted:", evens)
+    print("Odds sorted:", odds)
 
 main()
